@@ -7,7 +7,9 @@ class Results extends Component {
     static contextType = SearchContext
     
     render(){
-        const { artist, mood, genre} = this.context;
+        const { artist, mood, genre } = this.context;
+        const test = this.context.displaySearchResults(mood);
+        console.log(test);
         return(
         <>    
          

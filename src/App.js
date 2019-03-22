@@ -6,7 +6,7 @@ import Header from './components/Header';
 import Results from './Results';
 import Footer from './components/Footer';
 import SearchContext from './context/SearchContext';
-
+import { BASE_API_URL } from './config';
 
 
 
@@ -16,14 +16,44 @@ class App extends Component {
     artist: "",
     mood: "",
     genre: "",
+    playlists: [],
     error: null
   }
 
-  displaySearchResults = (a, b, c,) => {
-    const { artist, mood, genre } = this.state;
-    console.log('artist', artist);
-    console.log('mood', mood);
-    console.log('genre', genre);
+  displaySearchResults = (m) => {
+    console.log('Search ended');
+    console.log(m);
+    fetch(`${BASE_API_URL}/search?mood=${m}`, {
+      
+      'content-type': 'application-json',
+     
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+    
+    });
+  }
+
+  updateArtist = (name) => {
+    console.log(name);
+    this.setState({
+      artist: name
+    })
+  }
+
+  updateMood = (name) => {
+    console.log(name);
+    this.setState({
+      mood: name
+    })
+  }
+
+  updateGenre = (name) => {
+    console.log(name);
+    this.setState({
+      genre: name
+    })
   }
 
   render() {
@@ -31,7 +61,11 @@ class App extends Component {
       artist: this.state.artist,
       mood: this.state.mood,
       genre: this.state.genre,
-      displaySearchResults: this.state.displaySearchResults
+      playlists: this.state.playlists,
+      updateArtist: this.updateArtist,
+      updateMood: this.updateMood,
+      updateGenre: this.updateGenre,
+      displaySearchResults: this.displaySearchResults
     }
     return (
       <div className="App">

@@ -4,6 +4,10 @@ const SearchContext = React.createContext({
     artist: "",
     mood: "",
     genre: "",
+    playlist: [],
+    updateArtist: () => {},
+    updateMood: () => {},
+    updateGenre: () => {},
     displaySearchResults: () => {}
 });
 

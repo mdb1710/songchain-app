@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // eslint-disable-next-line
 import { Link } from 'react-router-dom';
-import Results from './Results';
+
 import SearchContext from './context/SearchContext';
 
 
@@ -12,28 +12,24 @@ class Searchpage extends Component{
     
 
     handleFirstArtistChange = (e) => {
-        this.setState({
-            artist: e.target.value
-        })
-        // console.log(this.state.artist);
+       
         console.log(e.target.value);
+        this.context.updateArtist(e.target.value);
     };
    
    
     handleMoodChange = (e) =>{
-        this.setState({
-            mood: e.target.value
-        })
-        // console.log(this.state.mood);
+       
+        
         console.log(e.target.value);
+        this.context.updateMood(e.target.value);
     };
 
     handleGenreChange = (e) =>{
-        this.setState({
-            genre: e.target.value
-        })
-        // console.log(this.state.mood);
+       
+        
         console.log(e.target.value);
+        this.context.updateGenre(e.target.value);
     };
 
     
@@ -45,12 +41,7 @@ class Searchpage extends Component{
      console.log('artist', artist);
      console.log('mood', mood);
      console.log('genre', genre);
-     
-     
-    //  this.setState({
-    //      artist: artist.e.target.value.toLowerCase()
-    //  })
-    //  this.context.displayResults(artist, mood);
+     this.context.displaySearchResults(mood);
      
     };
 
@@ -84,11 +75,10 @@ class Searchpage extends Component{
                    <Link to="/results">
                    <button type="submit" >Show Matches</button>
                    </Link>
-                   
                 </form>
             </div>
             <div className="search-results">
-           
+             
             </div>
             
         </>
