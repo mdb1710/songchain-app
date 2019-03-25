@@ -11,6 +11,8 @@ class Searchpage extends Component{
 
     
 
+    
+
     handleFirstArtistChange = (e) => {
        
         console.log(e.target.value);
@@ -53,7 +55,7 @@ class Searchpage extends Component{
     
     render() {
         const { artist, mood, genre } = this.context;
-        console.log(artist, mood, genre);
+        // console.log(artist, mood, genre);
 
         return(
         <>

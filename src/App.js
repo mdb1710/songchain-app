@@ -30,7 +30,9 @@ class App extends Component {
     })
     .then(res => res.json())
     .then(data => {
-      console.log(data);
+      let newList = data;
+      console.log(newList);
+      this.setState({ playlists: newList });
     
     });
   }
