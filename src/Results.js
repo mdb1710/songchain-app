@@ -5,14 +5,20 @@ import SearchContext from './context/SearchContext';
 class Results extends Component {
   
     static contextType = SearchContext;
+
+    // updatePlaylists = () => {
+    //     const { mood, genre, playlists } = this.context;
+    //     console.log(playlists);
+    //     this.context.displaySearchResults(mood, genre);
+    // }
     
     render(){
         const { artist, mood, genre, playlists } = this.context;
-        const test = this.context.displaySearchResults(mood);
+        const test = this.context.displaySearchResults(mood, genre);
         console.log(playlists);
         return(
         <>    
-         
+          {/* <SearchContext.Consumer playlist={playlists}> */}
             <h3>Here are your {mood} & {genre} search results for {artist} </h3>
             <div className="result-list">
                <ul>
@@ -30,7 +36,7 @@ class Results extends Component {
               </Link>
             </div>
             
-            
+         {/* </SearchContext.Consumer>    */}
         </>
         )
     }

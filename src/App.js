@@ -20,10 +20,10 @@ class App extends Component {
     error: null
   }
 
-  displaySearchResults = (m) => {
+  displaySearchResults = (m, g, a) => {
     console.log('Search ended');
-    console.log(m);
-    fetch(`${BASE_API_URL}/search?mood=${m}`, {
+    console.log(m, g);
+    fetch(`${BASE_API_URL}/search?mood=${m}&genre=${g}`, {
       
       'content-type': 'application-json',
      

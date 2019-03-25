@@ -43,7 +43,7 @@ class Searchpage extends Component{
      console.log('artist', artist);
      console.log('mood', mood);
      console.log('genre', genre);
-     this.context.displaySearchResults(mood);
+    //  this.context.displaySearchResults(mood, genre);
      
     };
 
