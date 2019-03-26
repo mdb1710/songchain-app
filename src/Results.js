@@ -10,6 +10,8 @@ class Results extends Component {
 
     componentDidMount(){
         const { mood, genre } = this.context
+        // let url = playlists.external_urls.spotify;
+        // console.log(url);
         this.context.displaySearchResults(mood, genre);
     }
 
@@ -17,8 +19,8 @@ class Results extends Component {
     
     render(){
         const { artist, mood, genre, playlists } = this.context;
-        
-        
+        // let url = playlists.external_urls.spotify;
+        // console.log(url);
         return(
         <>    
           
@@ -32,13 +34,14 @@ class Results extends Component {
                               <p>Playlist Name: {note.name}</p>
                              </div>
                              <div className="result-image">
-                              <p>{note.images[0].url}</p>
+                              <img src={note.images[0].url} alt="" />
                              </div>
                              <div className="result-tracks">
                               <p>Tracks: {note.tracks.total}</p>
                              </div>
+                             
                              <div className="result-url">
-                             <p>Start Listening Here</p>
+                             <p><a href={note.href}>Start Listening Here</a></p>
                              </div>
                            </li>  
                        )
