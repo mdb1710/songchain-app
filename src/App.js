@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Homepage from './Homepage'
 import Searchpage from './SearchPage';
 import Header from './components/Header';
@@ -7,6 +7,7 @@ import Results from './Results';
 import Footer from './components/Footer';
 import SearchContext from './context/SearchContext';
 import { BASE_API_URL } from './config';
+import LoginPage from './components/LoginPage';
 
 
 
@@ -16,6 +17,8 @@ class App extends Component {
     artist: "",
     mood: "",
     genre: "",
+    username: "",
+    password: "",
     playlists: [],
     error: null
   }
@@ -58,12 +61,31 @@ class App extends Component {
     })
   }
 
+  setUsername = (name) => {
+    console.log(name);
+    this.setState({
+      username: name
+    })
+  }
+
+  setPassword = (name) => {
+    console.log(name);
+    this.setState({
+      password: name
+    })
+  }
+
+
   render() {
     const contextValue = {
       artist: this.state.artist,
       mood: this.state.mood,
       genre: this.state.genre,
       playlists: this.state.playlists,
+      username: this.state.username,
+      password: this.state.password,
+      setUsername: this.setUsername,
+      setPassword: this.setPassword,
       updateArtist: this.updateArtist,
       updateMood: this.updateMood,
       updateGenre: this.updateGenre,
@@ -74,6 +96,7 @@ class App extends Component {
         <Header />
         <main>
         <SearchContext.Provider value={contextValue}>  
+        
         <Route
         exact path='/'
         component={Homepage} />
@@ -84,6 +107,7 @@ class App extends Component {
         path='/results'
         component={Results}
         />
+       
         </SearchContext.Provider>
         </main>
         <Footer />

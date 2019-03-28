@@ -20,7 +20,7 @@ class Results extends Component {
     render(){
         const { artist, mood, genre, playlists } = this.context;
         // let url = playlists.external_urls.spotify;
-        // console.log(url);
+      
         return(
         <>    
           
@@ -28,6 +28,8 @@ class Results extends Component {
             <div className="result-list">
                 <ul>
                    {playlists.map((note, index) =>{
+
+                       
                        return (
                            <li key={index}>
                              <div className="result-name" id={index}>
@@ -41,7 +43,7 @@ class Results extends Component {
                              </div>
                              
                              <div className="result-url">
-                             <p><a href={note.href}>Start Listening Here</a></p>
+                             <p><a href={note.external_urls}>Start Listening Here</a></p>
                              </div>
                            </li>  
                        )
