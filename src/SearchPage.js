@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 import SearchContext from './context/SearchContext';
 
+import './SearchPage.css';
+
 
 class Searchpage extends Component{
     
@@ -63,19 +65,20 @@ class Searchpage extends Component{
             <div className="searchform">
                 <form id='artist-search-form' onSubmit={this.handleArtistSearch}>
                    <fieldset>
-                   <label name="Artist">Name of Artist</label>
-                   <input type="text" name="artistOne"  onChange={this.handleFirstArtistChange}/>
-                   <br />
+                    <div className="form-section">
                    <label name="Mood">Your Mood</label>
                    <input type="text"  name='mood-search' onChange={this.handleMoodChange}/>
+                   </div>
                    <br />
+                   <div className="form-section">
                    <label name="Genre">Your Genre</label>
                    <input type="text"  name='genre-search' onChange={this.handleGenreChange}/>
+                   </div>
                    <br />
                    </fieldset>
-                   <button type="Reset" >Start Over</button>
+                   <button type="Reset" id="reset-button" >Start Over</button>
                    <Link to="/results">
-                   <button type="submit" >Show Matches</button>
+                   <button type="submit" id="match-button">Show Matches</button>
                    </Link>
                 </form>
             </div>

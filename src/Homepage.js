@@ -19,7 +19,7 @@ class Homepage extends Component {
                    <h3>About this app...</h3>
                    <p>Did you ever wonder how two artists are connected? 
                 Search now to see how two 'unrelated' artists/bands are connected and view playlists with them both</p>
-                <Login />
+               
                 </div>
                 <div className="start">
                    <Link to='/search'>

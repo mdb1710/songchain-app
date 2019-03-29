@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import SearchContext from './context/SearchContext';
 import { BASE_API_URL } from './config';
 import LoginPage from './components/LoginPage';
+import  './App.css';
 
 
 

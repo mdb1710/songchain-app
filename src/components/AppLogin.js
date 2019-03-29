@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SearchContext from '../context/SearchContext';
+import { BASE_API_URL } from '../config';
 
 class Login extends Component {
 
@@ -20,11 +21,20 @@ handleLoginSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted');
     const { username, password } = this.context;
-    const { history } = this.props;
+    
     // let username = this.refs.username.value;
     // let password = this.refs.password.value;
     console.log(username, password);
-    history.push('/search');
+    // fetch(`${BASE_API_URL}/login?username=${username}&password=${password}`, {
+    //     method: 'POST',
+    //     headers: {
+    //         'content-type': 'application-json'
+    //     },
+    //     body: JSON.stringify({ username, password })
+    // })
+    // .then (res => res.json());
+    // .then()
+    
     // this.context.onLoginSuccess()
 }
 

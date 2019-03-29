@@ -4,7 +4,7 @@ class Footer extends Component{
     render(){
         return(
             <>
-              <footer className="copyright">
+              <footer className="App-footer">
                 Copyright 2019 Code By MDB
               </footer>
             </>  
